@@ -2,6 +2,11 @@
 
 <ul>
   <% @tasks.each do |task| %>
- <li> <%= check_box_tag('done', 'yes', task.completed) %> <%= task.title %> </li>
+ <li> <%= check_box_tag('done', 'yes', task.completed) %> <%= link_to task.title, task_path(task) %>
+  <%= link_to delete_path(task), method: :delete, data: {confirm: "Are you sure?" } do  %>
+  <i class="fas fa-dumpster"></i> </li>
+  <% end %>
  <% end %>
 </ul>
+
+<p><%= link_to "Add new task", new_path %></p>
