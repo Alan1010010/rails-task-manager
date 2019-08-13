@@ -8,6 +8,6 @@
 <p> <%= check_box_tag('done', 'yes', @task.completed) %> This task is not yet complete</p>
 <% end %>
 
-<%= link_to "Edit this task", edit_path %>
+<%= link_to "Edit this task", edit_task_path %>
 
 <%= link_to "Back to task list", tasks_path %>
